@@ -1,0 +1,27 @@
+# .gqlgen.yml example
+#
+# Refer to https://gqlgen.com/config/
+# for detailed .gqlgen.yml documentation.
+
+schema:
+  - 'api/graphql/*.graphql'
+exec:
+  filename: generated.go
+model:
+  filename: api/models/generated.go
+resolver:
+  filename: api/resolver/resolver.go
+  type: Resolver
+
+omit_slice_element_pointers: true
+
+autobind:
+  - github.com/yiminglao/resume_web/api/models
+models:
+  User:
+    model: models.User
+
+  ID:
+    model:
+      - github.com/99designs/gqlgen/graphql.IntID
+      - github.com/99designs/gqlgen/graphql.ID
