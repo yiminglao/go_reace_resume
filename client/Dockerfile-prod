@@ -23,4 +23,6 @@ COPY . .
 # n/b: these dependencies are installed inside docker
 # it runs the command "yarn" which is an equivalent of "yarn add"
 # start the container
-CMD ["yarn", "start"]
+CMD ["yarn", "build"]
+
+

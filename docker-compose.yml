@@ -10,7 +10,7 @@ services:
     build:
       # the context (working directory) is the current directory
       # change this to the directory containing the dockerfile if in a different place
-      context: /frontend
+      context: ./client
       # the dockerfile to be run
       dockerfile: Dockerfile
     # map the exposed port from the underlying service to a port exposed to the outside
@@ -19,5 +19,7 @@ services:
     ports:
       - "3000:3000"
     # set the environment to development
+    volumes:
+      - "./client:/app"
     environment:
       - NODE_ENV=development
